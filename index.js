@@ -158,4 +158,4 @@ bot.on("message", async message => {
 
     });
 
-bot.login("NDQ3MDc5OTA2ODI5MDA4OTA2.DeXJrg.buz1aMJktMrXbo3pIlbTYHUwdqY"); //replace this in case of a download with botconfig.token
+bot.login("NDQ3MDc5OTA2ODI5MDA4OTA2.DeXVig.1g4nfasWZcjdmYAsCzXtHaZ9U6c"); //replace this in case of a download with botconfig.token
