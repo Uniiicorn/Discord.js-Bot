@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     let embed = new Discord.RichEmbed()
     .setTitle("~**FAQ**~")
     .setColor("#ff3300")
-    .addField("Who old are you?", age, true)
+    .addField("How old are you?", age, true)
     .addField("Where do you live?", location, true)
     .addField("What's your name?", name, true)
     .addField("Do you have some pets?", pet, true)
