@@ -113,7 +113,7 @@ bot.on("message", async message => {
     .addField("server", `${prefix}server`, false)      
     .addField("faq", `${prefix}faq`, false)   
     .addField("tempmute", `${prefix}tempmute <@User> <time s/h/d>`, false)
-    .addField("tempmute", `${prefix}weather <city>`, false)  
+    .addField("weather", `${prefix}weather <city>`, false)  
     
     .setThumbnail(icon);
     
