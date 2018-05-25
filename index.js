@@ -91,9 +91,9 @@ bot.on("message", async message => {
 
     let veteran = message.guild.roles.find(`name`, "Veteran");
 
-   //if(curlvl === 10) {
-     //   message.guild.member.addRole(veteran.id);
-   // };
+   if(curlvl === 10) {
+     message.member.addRole(veteran);
+   };
 
     fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
         if(err) console.log(err);
