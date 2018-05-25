@@ -91,7 +91,7 @@ bot.on("message", async message => {
 
     let veteran = message.guild.roles.find(`name`, "Veteran");
 
-   if(curlvl === 2) {
+   if(curlvl === 10) {
      message.member.addRole(veteran);
    };
 
