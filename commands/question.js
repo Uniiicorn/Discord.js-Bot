@@ -472,6 +472,27 @@ module.exports.run = async (bot, message, args) => {
     return;
     }
 
+    if(newArgs.includes("marry")) {
+
+        let replies = ["Yes! You should marry this pepe!", "No! This Person already has an secret lover.."]
+
+    
+        let result = Math.floor((Math.random() * replies.length));
+    
+    
+        let question = args.slice(0).join(" ");
+    
+        let embed = new Discord.RichEmbed()
+        .setAuthor(message.author.tag)
+        .setColor("#ff3300")
+        .addField("Question", question, false)
+        .addField("Answer", replies[result], false)
+    
+        message.channel.send(embed);
+        
+        return;
+        }
+
     if(newArgs.includes("How much")) {
 
     
