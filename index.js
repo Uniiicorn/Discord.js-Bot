@@ -65,13 +65,11 @@ bot.on("message", async message => {
     let embed = new Discord.RichEmbed()
     .setDescription("~**Help**~")
     .setColor("#15f153")
-    .addField("about", `${prefix}about`, false)
     .addField("clear", `${prefix}clear <amount>`, false)
     .addField("dog", `${prefix}dog`, false)
     .addField("question", `${prefix}? <question>`, false)
     .addField("report", `${prefix}report <@User> <reason>`, false)
     .addField("say", `${prefix}say <message>`, false)            
-    .addField("server", `${prefix}server`, false)      
     
     .setThumbnail(icon);
     
@@ -117,4 +115,4 @@ bot.on("message", async message => {
 
     });
 
-bot.login(botconfig.token);
+bot.login(process.env.BOT_TOKEN);
