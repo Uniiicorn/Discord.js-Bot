@@ -227,46 +227,6 @@ module.exports.run = async (bot, message, args) => {
 
     return;
     }
-    
-    if(newArgs.includes("you are a bot")) {
-        let replies = ["Dude, watch the tag next to my name, what are you expecting?!", "Yes.", "Yeeessss ._.", "No, I am you."]
-
-    
-    let result = Math.floor((Math.random() * replies.length));
-
-
-    let question = args.slice(0).join(" ");
-
-    let embed = new Discord.RichEmbed()
-    .setAuthor(message.author.tag)
-    .setColor("#ff3300")
-    .addField("Question", question, false)
-    .addField("Answer", replies[result], false)
-
-    message.channel.send(embed);
-
-    return;
-    }
-
-    if(newArgs.includes("you are a human")) {
-        let replies = ["Dude, watch the tag next to my name, what are you expecting?!", "Nooo!", "I don't wanna be a Human! ._.", "Rly?"]
-
-    
-    let result = Math.floor((Math.random() * replies.length));
-
-
-    let question = args.slice(0).join(" ");
-
-    let embed = new Discord.RichEmbed()
-    .setAuthor(message.author.tag)
-    .setColor("#ff3300")
-    .addField("Question", question, false)
-    .addField("Answer", replies[result], false)
-
-    message.channel.send(embed);
-
-    return;
-    }
 
     //svgfbsdgfhsd hs hks hdf
 
@@ -492,12 +452,11 @@ module.exports.run = async (bot, message, args) => {
 
     return;
     }
-    
-    if(newArgs.includes("You are a bot")) {
-        let replies = ["Dude, watch the tag next to my name, what are you expecting?!", "Yes.", "Yeeessss ._.", "No, I am you."]
+
+    if(newArgs.includes("how much")) {
 
     
-    let result = Math.floor((Math.random() * replies.length));
+    let result = Math.floor((Math.random() * 1000) -1);
 
 
     let question = args.slice(0).join(" ");
@@ -506,33 +465,69 @@ module.exports.run = async (bot, message, args) => {
     .setAuthor(message.author.tag)
     .setColor("#ff3300")
     .addField("Question", question, false)
-    .addField("Answer", replies[result], false)
+    .addField("Answer", result, false)
 
     message.channel.send(embed);
 
     return;
     }
 
-    if(newArgs.includes("You are a human")) {
-        let replies = ["Dude, watch the tag next to my name, what are you expecting?!", "Nooo!", "I don't wanna be a Human! ._.", "Rly?"]
+    if(newArgs.includes("How much")) {
 
     
-    let result = Math.floor((Math.random() * replies.length));
+        let result = Math.floor((Math.random() * 1000) -1);
+    
+    
+        let question = args.slice(0).join(" ");
+    
+        let embed = new Discord.RichEmbed()
+        .setAuthor(message.author.tag)
+        .setColor("#ff3300")
+        .addField("Question", question, false)
+        .addField("Answer", result, false)
+    
+        message.channel.send(embed);
+    
+        return;
+        }
 
+        if(newArgs.includes("How many")) {
 
-    let question = args.slice(0).join(" ");
+    
+            let result = Math.floor((Math.random() * 1000) -1);
+        
+        
+            let question = args.slice(0).join(" ");
+        
+            let embed = new Discord.RichEmbed()
+            .setAuthor(message.author.tag)
+            .setColor("#ff3300")
+            .addField("Question", question, false)
+            .addField("Answer", result, false)
+        
+            message.channel.send(embed);
+        
+            return;
+            }
 
-    let embed = new Discord.RichEmbed()
-    .setAuthor(message.author.tag)
-    .setColor("#ff3300")
-    .addField("Question", question, false)
-    .addField("Answer", replies[result], false)
+            if(newArgs.includes("how many")) {
 
-    message.channel.send(embed);
-
-    return;
-    }
-
+    
+                let result = Math.floor((Math.random() * 1000) -1);
+            
+            
+                let question = args.slice(0).join(" ");
+            
+                let embed = new Discord.RichEmbed()
+                .setAuthor(message.author.tag)
+                .setColor("#ff3300")
+                .addField("Question", question, false)
+                .addField("Answer", result, false)
+            
+                message.channel.send(embed);
+            
+                return;
+                }
 
     let replies = ["Yes.", "No.", "Maybe.", "Idk.", "Idc.", "Dude, why the hell are you asking me something like that?",
      "Hell no.", "Hell yeah!", "Just do it!", 
