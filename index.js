@@ -58,47 +58,6 @@ bot.on("message", async message => {
     let commandFile = bot.commands.get(cmd.slice(prefix.length));
     if(commandFile) commandFile.run(bot,message,args);
 
-    let xpadd = Math.floor(Math.random() * 7) + 8;
-
-    if(!xp[message.author.id]) {
-        xp[message.author.id] = {
-            xp: 0,
-            level: 1
-        };
-    };
-
-    let curxp = xp[message.author.id].xp;
-    let curlvl = xp[message.author.id].level;
-
-    let nextLevel = curlvl * 200 * 2;
-
-    xp[message.author.id].xp = curxp + xpadd;
-
-    if(nextLevel <= xp[message.author.id].xp) {
-        xp[message.author.id].level = curlvl + 1;
-
-        let difference = nextLevel- curxp;
-
-        let levelupEmbed = new Discord.RichEmbed()
-        .setColor("#15f153")
-        .setTitle("~**Level up!**~")
-        .addField("Old level", curlvl, true)
-        .addField("New level", curlvl+1, true)
-        .setFooter(`${difference} XP was needed before leveling up.`, message.author.displayAvatarURL);
-
-        message.author.send(levelupEmbed);
-    };
-
-    let veteran = message.guild.roles.find(`name`, "Veteran");
-
-    if(curlvl === 10) {
-        message.member.addRole(veteran);
-    };
-
-    fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
-        if(err) console.log(err);
-    });
-
     if(cmd === `${prefix}help`){
 
     let icon = bot.user.displayAvatarURL;
@@ -107,18 +66,12 @@ bot.on("message", async message => {
     .setDescription("~**Help**~")
     .setColor("#15f153")
     .addField("about", `${prefix}about`, false)
-    .addField("ban", `${prefix}ban <@User> <reason>`, false)
     .addField("clear", `${prefix}clear <amount>`, false)
     .addField("dog", `${prefix}dog`, false)
-    .addField("kick", `${prefix}kick <@User> <reason>`, false)
-    .addField("level", `${prefix}level`, false)
-    .addField("prefix", `${prefix}prefix <new prefix>`, false)
     .addField("question", `${prefix}? <question>`, false)
     .addField("report", `${prefix}report <@User> <reason>`, false)
     .addField("say", `${prefix}say <message>`, false)            
     .addField("server", `${prefix}server`, false)      
-    .addField("faq", `${prefix}faq`, false)   
-    .addField("tempmute", `${prefix}tempmute <@User> <time s/h/d>`, false)    
     
     .setThumbnail(icon);
     
@@ -164,4 +117,4 @@ bot.on("message", async message => {
 
     });
 
- bot.login(process.env.BOT_TOKEN); //replace this in case of a download with botconfig.token 
+bot.login(botconfig.token);
